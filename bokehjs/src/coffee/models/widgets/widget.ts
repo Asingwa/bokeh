@@ -3,6 +3,10 @@ import {LayoutDOM, LayoutDOMView} from "../layouts/layout_dom"
 export abstract class WidgetView extends LayoutDOMView {
   model: Widget
 
+  css_classes(): string[] {
+    return super.css_classes().concat("bk-widget")
+  }
+
   render(): void {
     this._render_classes() // XXX: because no super()
 
@@ -15,8 +19,6 @@ export abstract class WidgetView extends LayoutDOMView {
       this.el.style.width = `${this.model.width}px`
   }
 }
-
-WidgetView.prototype.className = "bk-widget"
 
 export abstract class Widget extends LayoutDOM {}
 

@@ -43,6 +43,10 @@ Pikaday.prototype.adjustPosition = function(this: Pickaday): void {
 export class DatePickerView extends InputWidgetView {
   model: DatePicker
 
+  css_classes(): string[] {
+    return super.css_classes().concat("bk-widget-form-group")
+  }
+
   render(): void {
     super.render()
 
@@ -77,8 +81,6 @@ export class DatePickerView extends InputWidgetView {
     this.change_input()
   }
 }
-
-DatePickerView.prototype.className = "bk-widget-form-group"
 
 export class DatePicker extends InputWidget {
 }
